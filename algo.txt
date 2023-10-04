@@ -1,0 +1,22 @@
+# Write the code here
+frequency = 1/0.00858  # Frequency of the sinusoid in Hz
+amplitude = 0.006  # Amplitude of the sinusoid
+duration = 6  # Duration of the time interval in seconds
+sampling_rate = 44100  # Number of samples per second (sampling rate)
+
+# Calculate the number of samples based on duration and sampling rate
+num_samples = int(duration * sampling_rate)
+
+# Generate the time array using linspace
+time = np.linspace(0, duration, num_samples)
+
+# Calculate the corresponding values of the sinusoid
+sinusoid_values = amplitude * np.sin(2 * np.pi * frequency * time)
+
+plot_signals(sinusoid_values, fs)
+
+
+
+# Write the code here
+
+Audio(sinusoid_values, rate=fs)
